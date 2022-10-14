@@ -13,11 +13,20 @@ class SessionController {
         const { cargo } = usuarios[i];
         res.status(200).send(usuario);
         return;
+<<<<<<< HEAD
       }
       c += 1;
       if (c === usuarios.length) {
         res.status(404).send(false);
         return;
+=======
+      } else {
+        c += 1;
+        if (c === usuarios.length) {
+          res.status(404).send(false);
+        return;
+        }
+>>>>>>> f7479d511ecaaba3fa15e5a9e95fb50e113728d0
       }
     }
   }
