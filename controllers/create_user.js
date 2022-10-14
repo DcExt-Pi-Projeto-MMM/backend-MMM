@@ -2,6 +2,7 @@
 const fs = require('fs');
 const yup = require('yup');
 const usuarios = require('../usuarios.json');
+const jwt = require('jsonwebtoken');
 
 const data = fs.readFileSync('./usuarios.json', 'utf-8');
 const user = JSON.parse(data);
@@ -27,7 +28,7 @@ class createUser {
       login, senha, cargo, email,
     });
     fs.writeFileSync('./usuarios.json', JSON.stringify(user, null), 'utf-8');
-    return res.json({ ok: true });
+    return res.json({ token: jwt.sing({ login }, '0ee4647cf7ecd7c5167616140b538ccf',{expiresIn: '3d',}), });
   }
 }
 
