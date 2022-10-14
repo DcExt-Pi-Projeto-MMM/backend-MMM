@@ -11,13 +11,11 @@ class SessionController {
       if (usuario === usuarios[i].login && senha === usuarios[i].senha) {
         // eslint-disable-next-line no-unused-vars
         const { cargo } = usuarios[i];
-        res.status(200).send(usuario);
-        return;
+        res.json({ ok: true });
       } else {
         c += 1;
         if (c === usuarios.length) {
-          res.status(404).send(false);
-        return;
+          res.json({ not: false });
         }
       }
     }
