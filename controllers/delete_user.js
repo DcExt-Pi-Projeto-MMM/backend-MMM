@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
-const { json } = require('express');
 const fs = require('fs');
-const usuarios = require('../usuarios.json');
 
 const data = fs.readFileSync('./usuarios.json', 'utf-8');
 const user = JSON.parse(data);
