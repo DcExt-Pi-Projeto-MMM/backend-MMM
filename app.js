@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-const { application } = require('express');
 const express = require('express');
 const cors = require('cors');
 const routes = require('./routes');
