@@ -1,5 +1,3 @@
-// eslint-disable-next-line no-unused-vars
-const path = require('path');
 const usuarios = require('../usuarios.json');
 
 class SessionController {
@@ -12,18 +10,13 @@ class SessionController {
         // eslint-disable-next-line no-unused-vars
         const { cargo } = usuarios[i];
 
-        res.status(200).send(usuario);
+        res.status(200).send(usuarios[i]);
         return;
       }
       c += 1;
       if (c === usuarios.length) {
-        res.status(404).send(false);
-        res.json({ ok: true });
+        res.status(404).json({ error: false });
         return;
-      }
-      c += 1;
-      if (c === usuarios.length) {
-        res.json({ not: false });
       }
     }
   }
